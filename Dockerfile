@@ -1,4 +1,4 @@
-FROM python:3.6.6
+FROM frolvlad/alpine-python3:3.6.6
 ENV PYTHONUNBUFFERED 1
 RUN cp -a /etc/apk/repositories /etc/apk/repositories.bak && sed -i "s@http://dl-cdn.alpinelinux.org/@https://mirrors.aliyun.com/@g" /etc/apk/repositories   && apk add -U jpeg-dev zlib-dev gcc python3-dev libc-dev tzdata   && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN mkdir -p /app/blog
