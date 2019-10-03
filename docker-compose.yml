@@ -24,8 +24,7 @@ services:
       - backend
 
   web:
-    restart: always
-    image: ${BLOG_IMAGE}
+    build: ./
     container_name: blog_web
     environment:
       BLOG_MYSQL_PASSWORD: ${MYSQL_ROOT_PASSWORD}
