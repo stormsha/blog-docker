@@ -39,9 +39,9 @@ services:
       - ./blog.env
     command: gunicorn blog.wsgi -b 0.0.0.0:8000
     volumes:
-      - ./web/static:/opt/cloud/blog/static
-      - ./web/media:/opt/cloud/blog/media
-      - ./web/whoosh_index:/opt/cloud/blog/whoosh_index
+      - ./web/blog/static:/opt/cloud/blog/static
+      - ./web/blog/media:/opt/cloud/blog/media
+      - ./web/blog/whoosh_index:/opt/cloud/blog/whoosh_index
     links:
       - db
       - redis
@@ -57,8 +57,8 @@ services:
     image: ${NGINX_IMAGE}
     container_name: blog_nginx
     volumes:
-      - ./web/static:/opt/blog/static:ro
-      - ./web/media:/opt/blog/media:ro
+      - ./web/blog/static:/opt/blog/static:ro
+      - ./web/blog/media:/opt/blog/media:ro
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
       - ./nginx/ssl_cert:/etc/nginx/ssl_cert:ro
       - ./nginx/log:/var/log/nginx
