@@ -10,7 +10,7 @@ services:
       - ./db/my.cnf:/etc/my.cnf:ro
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${IZONE_MYSQL_NAME}
+      MYSQL_DATABASE: ${BLOG_MYSQL_NAME}
     ports:
      - "3306:3306"
     networks:
@@ -36,7 +36,7 @@ services:
       BLOG_REDIS_HOST: redis
       BLOG_REDIS_PORT: 6379
     env_file:
-      - ./blog.env
+      - ./web/blog/blog.env
     command: gunicorn blog.wsgi -b 0.0.0.0:8000
     volumes:
       - ./web/blog/static:/opt/cloud/blog/static
