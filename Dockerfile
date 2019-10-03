@@ -6,3 +6,4 @@ WORKDIR /app/blog
 COPY ./web/blog .
 RUN pip install -r requirements.txt
 EXPOSE 9000
+USER web
