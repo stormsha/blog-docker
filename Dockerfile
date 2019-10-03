@@ -4,6 +4,8 @@ RUN cp -a /etc/apk/repositories /etc/apk/repositories.bak && sed -i "s@http://dl
 RUN mkdir -p /app/blog
 WORKDIR /app/blog
 COPY ./web/blog .
-RUN pip install -r requirements.txt
+RUN sudo apt-get install mysql-server mysql-client
+RUN sudo  apt-get install libmysqlclient-dev python3-dev
+RUN pip install -r requirements.txt -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
 EXPOSE 9000
 USER web
