@@ -48,6 +48,8 @@ services:
     networks:
       - backend
       - frontend
+    ports:
+     - "9000:8000"
 
   nginx:
     restart: always
