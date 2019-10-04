@@ -60,8 +60,8 @@ services:
       - ./nginx/ssl_cert:/etc/nginx/ssl_cert:ro
       - ./nginx/log:/var/log/nginx
     ports:
-      - "80:80"
-      - "443:443"
+      - "81:80"
+      - "444:443"
     links:
       - web
     networks:
