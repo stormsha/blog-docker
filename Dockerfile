@@ -1,7 +1,6 @@
 FROM python:3.6.6-alpine
 ARG work_home=/opt/app/blog
 ENV PYTHONUNBUFFERED 1
-
 RUN apk add mysql-dev
 RUN cp -a /etc/apk/repositories /etc/apk/repositories.bak \
     && sed -i "s@http://dl-cdn.alpinelinux.org/@https://mirrors.aliyun.com/@g" /etc/apk/repositories \
@@ -11,7 +10,7 @@ RUN cp -a /etc/apk/repositories /etc/apk/repositories.bak \
             gcc \
             python3-dev \
             libc-dev \
-            tzdata
+            tzdata \
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN mkdir -p ${work_home}
 WORKDIR ${work_home}
