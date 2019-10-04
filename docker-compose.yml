@@ -38,7 +38,7 @@ services:
       - ./web/blog/blog.env
     command: gunicorn blog.wsgi -b 0.0.0.0:8000
     volumes:
-      - ./web/blog:/opt/app/blog
+      - ./web/blog:/opt/app/blog/
     links:
       - db
       - redis
