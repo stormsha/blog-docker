@@ -24,7 +24,7 @@ services:
 
   web:
     restart: always
-    image: blog
+    image: blog:v1
     container_name: blog_web
     environment:
       BLOG_MYSQL_PASSWORD: ${MYSQL_ROOT_PASSWORD}
