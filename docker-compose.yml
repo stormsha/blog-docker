@@ -24,7 +24,7 @@ services:
 
   web:
     restart: always
-    image: blog-docker_web
+    image: blog
     container_name: blog_web
     environment:
       BLOG_MYSQL_PASSWORD: ${MYSQL_ROOT_PASSWORD}
