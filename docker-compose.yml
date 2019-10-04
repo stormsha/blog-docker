@@ -11,7 +11,7 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${BLOG_MYSQL_NAME}
     ports:
-     - "3306:3306"
+     - "9100:3306"
     networks:
       - backend
 
