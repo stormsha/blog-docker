@@ -36,7 +36,7 @@ services:
       BLOG_REDIS_PORT: 6379
     env_file:
       - ./web/blog/blog.env
-    command: gunicorn blog.wsgi -b 0.0.0.0:8000
+    command: gunicorn blog.wsgi -b --insecure 0.0.0.0:8000
     volumes:
       - ./web/blog:/opt/app/blog/
     links:
