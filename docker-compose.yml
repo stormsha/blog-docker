@@ -19,6 +19,9 @@ services:
     restart: always
     image: ${REDIS_IMAGE}
     container_name: blog_redis
+     volumes:
+      - ./redis/redis.cnf:/etc/redis.conf
+      - ./redis/data:/data
     networks:
       - backend
 
@@ -36,7 +39,7 @@ services:
       BLOG_REDIS_PORT: 6379
     env_file:
       - ./web/blog/blog.env
-    command: gunicorn blog.wsgi -b 0.0.0.0:8000
+    command: apk add vim && pip install django_compressor==2.0 && gunicorn blog.wsgi -b 0.0.0.0:8000
     volumes:
       - ./web/blog:/opt/app/blog/
     links:
