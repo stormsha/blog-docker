@@ -37,6 +37,7 @@ services:
       BLOG_MYSQL_PORT: 3306
       BLOG_REDIS_HOST: redis
       BLOG_REDIS_PORT: 6379
+    command: gunicorn blog.wsgi -b 0.0.0.0:8000
     volumes:
       - ./web/blog:/opt/app/blog/
     links:
