@@ -7,4 +7,4 @@ RUN mkdir -p ${work_home}
 WORKDIR ${work_home}
 COPY ./web/blog .
 RUN pip install -r requirements.txt -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
-EXPOSE 9000
+EXPOSE 8000
