@@ -9,7 +9,7 @@ services:
       - ./db/my.cnf:/etc/my.cnf:ro
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${BLOG_MYSQL_NAME}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
     ports:
      - "9100:3306"
     networks:
@@ -39,7 +39,7 @@ services:
       BLOG_REDIS_PORT: 6379
     env_file:
       - ./web/blog/blog.env
-    command: apk add vim && pip install django_compressor==2.0 && gunicorn blog.wsgi -b 0.0.0.0:8000
+    command: apk add vim && gunicorn blog.wsgi -b 0.0.0.0:8000
     volumes:
       - ./web/blog:/opt/app/blog/
     links:
