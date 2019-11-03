@@ -19,7 +19,7 @@ services:
     restart: always
     image: ${REDIS_IMAGE}
     container_name: blog_redis
-     volumes:
+    volumes:
       - ./redis/redis.cnf:/etc/redis.conf
       - ./redis/data:/data
     networks:
