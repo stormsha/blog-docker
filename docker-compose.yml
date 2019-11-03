@@ -11,7 +11,7 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
     ports:
-     - "9100:3306"
+     - "3306:3306"
     networks:
       - backend
 
@@ -34,7 +34,7 @@ services:
       BLOG_MYSQL_HOST: db
       BLOG_MYSQL_NAME: ${BLOG_MYSQL_NAME}
       BLOG_MYSQL_USER: root
-      BLOG_MYSQL_PORT: 9100
+      BLOG_MYSQL_PORT: 3306
       BLOG_REDIS_HOST: redis
       BLOG_REDIS_PORT: 6379
 #    command: pip install gunicorn==19.9.0 && gunicorn blog.wsgi -b 0.0.0.0:8000
@@ -50,7 +50,7 @@ services:
       - backend
       - frontend
     ports:
-     - "9000:8000"
+     - "8000:8000"
 
   nginx:
     restart: always
