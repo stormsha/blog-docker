@@ -24,6 +24,8 @@ services:
       - ./redis/data:/data
     networks:
       - backend
+    ports:
+     - "6379:6379"
 
   web:
     restart: always
