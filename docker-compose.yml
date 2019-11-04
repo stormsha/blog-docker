@@ -19,13 +19,8 @@ services:
     restart: always
     image: ${REDIS_IMAGE}
     container_name: blog_redis
-    volumes:
-      - ./redis/conf:/etc/redis
-      - ./redis/data:/data
     networks:
       - backend
-    ports:
-     - "6379:6379"
 
   web:
     restart: always
