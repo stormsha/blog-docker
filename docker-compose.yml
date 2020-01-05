@@ -56,6 +56,7 @@ services:
     volumes:
       - ./web/blog/static:/opt/app/blog/static:ro
       - ./web/blog/media:/opt/app/blog/media:ro
+      - ./web/html:/opt/app/html:ro
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
       - ./nginx/ssl_cert:/etc/nginx/ssl_cert:ro
       - ./nginx/log:/var/log/nginx
